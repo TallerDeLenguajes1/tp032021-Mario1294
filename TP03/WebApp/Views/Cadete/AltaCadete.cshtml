@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Alta Cadete</h1>
+</div>
+
+<form asp-action="Index" asp-controller="Cadete" method="post">
+
+    <fieldset>
+        
+        <div class="col-md-6">
+            <label for="nya" class="form-label">Apellido y Nombre:</label>
+            <input type="text" class="form-control" name="nombre" value="" id="nya" required/>
+        </div>
+        <div class="col-md-6">
+            <label for="dni" class="form-label">D.N.I: </label>
+            <input type="number" class="form-control" name="dni" value="" id="dni" required/>
+        </div>
+        <div class="col-md-6">
+            <label for="direccion" class="form-label">Direccion: </label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="" required />
+        </div>
+
+        <div class="col-md-6">
+            <label for="telf" class="form-label">Telefono: </label>
+            <input type="text" class="form-control" id="telf" name="telf" value="" required/>
+        </div>
+
+        <div class="col-md-6">
+            <br /> 
+            <input type="submit" class="btn-primary" />
+        </div>
+
+    </fieldset>
+</form>

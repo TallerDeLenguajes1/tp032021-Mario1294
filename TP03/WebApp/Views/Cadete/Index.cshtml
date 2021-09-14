@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@model List<WebApp.Entidades.Cadete>
+
+<div class="text-center">
+    <h1 class="display-4">Cadete</h1>
+</div>
+    <p><a href="https://localhost:44357/Cadete/AltaCadete">Cargar Cadete</a>.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.Direccion</td>
+                <td>@item.Telf</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+
