@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Taller\\Repogit\\TP03\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj": {}
+    "C:\\Taller\\Repogit\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Taller\\Repogit\\TP03\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj": {
+    "C:\\Taller\\Repogit\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Taller\\Repogit\\TP03\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Taller\\Repogit\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Taller\\Repogit\\TP03\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Taller\\Repogit\\tp032021-Mario1294\\TP03\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-        "outputPath": "C:\\Taller\\Repogit\\TP03\\tp032021-Mario1294\\TP03\\WebApp\\obj\\",
+        "outputPath": "C:\\Taller\\Repogit\\tp032021-Mario1294\\TP03\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

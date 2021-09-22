@@ -716,3 +716,5 @@ C:\Taller\Repogit\TP03\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\WebApp.dl
 C:\Taller\Repogit\TP03\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 C:\Taller\Repogit\TP03\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Taller\Repogit\TP03\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
+C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Pedidos\Index.cshtml.g.cs
+C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Pedidos\CrearPedido.cshtml.g.cs

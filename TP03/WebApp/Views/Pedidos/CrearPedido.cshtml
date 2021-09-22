@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Crear Pedido";
+}
+<div class="text-center">
+    <h1 class="display-4">Crear Pedido</h1>
+</div>
+
+<form asp-action="Index" asp-controller="Pedidos" method="post">
+
+    <fieldset>
+        
+        <div class="col-md-6">
+            <label for="obs" class="form-label">Osbservacion:</label>
+            <input type="text" class="form-control" name="obs" value="" id="obs" required/>
+        </div>
+ 
+        <div class="col-md-6">
+            <label for="est" class="form-label">Estado: </label>
+            <input type="text" class="form-control" id="est" name="est" value="" required />
+        </div>
+
+        <div class="col-md-6">
+            <label for="cliente" class="form-label">Cliente: </label>
+            <input type="text" class="form-control" id="cliente" name="Cliente" value="" required/>
+        </div>
+
+        <div class="col-md-6">
+            <br /> 
+            <input type="submit" class="btn-primary" />
+        </div>
+
+    </fieldset>
+</form>

@@ -25,14 +25,8 @@ namespace WebApp.Controllers
         {
             if (nombre != null)
             {
-                Cadete MiCadete = new Cadete()
-                {
-                    Nombre = nombre,
-                    Id = i++,
-                    Telf = telf,
-                    Direccion = direccion
-
-                };
+                Cadete MiCadete = new Cadete(nombre, i++, telf, direccion);
+               
                 cadetes.Add(MiCadete);
 
                 return View(cadetes);

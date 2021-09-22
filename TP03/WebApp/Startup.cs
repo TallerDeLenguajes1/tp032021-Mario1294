@@ -15,6 +15,7 @@ namespace WebApp
     public class Startup
     {
         static List<Cadete> Cadetes = new List<Cadete>();
+        static List<Pedido> Pedidos = new List<Pedido>();
 
         public Startup(IConfiguration configuration)
         {
@@ -28,6 +29,7 @@ namespace WebApp
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton(Cadetes);
+            services.AddSingleton(Pedidos);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
