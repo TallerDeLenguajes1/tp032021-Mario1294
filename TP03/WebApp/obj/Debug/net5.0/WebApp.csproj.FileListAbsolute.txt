@@ -25,7 +25,6 @@ C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\WebApp.TagHelp
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\WebApp.RazorCoreGenerate.cache
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Cadete\Index.cshtml.g.cs
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

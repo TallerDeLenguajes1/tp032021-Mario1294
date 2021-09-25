@@ -14,8 +14,9 @@ namespace WebApp
 {
     public class Startup
     {
-        static List<Cadete> Cadetes = new List<Cadete>();
-        static List<Pedido> Pedidos = new List<Pedido>();
+        //static List<Cadete> Cadetes = new List<Cadete>();
+        //static List<Pedido> Pedidos = new List<Pedido>();
+        static DBTemporal DB = new DBTemporal();
 
         public Startup(IConfiguration configuration)
         {
@@ -28,8 +29,9 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddSingleton(Cadetes);
-            services.AddSingleton(Pedidos);
+            //services.AddSingleton(Cadetes);
+            //services.AddSingleton(Pedidos);
+            services.AddSingleton(DB);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

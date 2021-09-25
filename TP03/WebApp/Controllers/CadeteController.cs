@@ -13,33 +13,33 @@ namespace WebApp.Controllers
         static int i = 0;
         
         private readonly ILogger<CadeteController> _logger;
-        private readonly List<Cadete> cadetes;
+        private readonly DBTemporal _DB;
 
-        public CadeteController(ILogger<CadeteController> logger, List<Cadete> Cadetes)
+        public CadeteController(ILogger<CadeteController> logger, DBTemporal dB)
         {
             _logger = logger;
-            cadetes = Cadetes;
+            _DB = dB;
         }
 
         public IActionResult Index(string nombre, string telf, string direccion)
         {
             if (nombre != null)
             {
+                
                 Cadete MiCadete = new Cadete(nombre, i++, telf, direccion);
-               
-                cadetes.Add(MiCadete);
 
-                return View(cadetes);
+                _DB.Cadeteria.Cadetes.Add(MiCadete);
+                return View(_DB.Cadeteria.Cadetes);
             }
             else
             {
-                return View(cadetes);
+                return View(_DB.Cadeteria.Cadetes);
             }
         }
             
         public IActionResult AltaCadete()
         {
-            return View();
+            return View(_DB.Cadeteria.Cadetes);
         }
 
     }

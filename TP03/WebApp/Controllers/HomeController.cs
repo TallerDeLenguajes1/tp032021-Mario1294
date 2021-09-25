@@ -13,12 +13,11 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly List<Cadete> cadestes;
 
-        public HomeController(ILogger<HomeController> logger, List<Cadete> Cadestes)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            cadestes = Cadestes;
+       
         }
 
         public IActionResult Index()
@@ -26,10 +25,7 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

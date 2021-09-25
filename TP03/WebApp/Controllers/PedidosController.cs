@@ -12,12 +12,12 @@ namespace WebApp.Controllers
     {
         static int i = 0;
         private readonly ILogger<PedidosController> _logger;
-        private readonly List<Pedido> pedidos;
+        private readonly DBTemporal _DB;
 
-        public PedidosController(ILogger<PedidosController> logger, List<Pedido> Pedidos)
+        public PedidosController(ILogger<PedidosController> logger, DBTemporal dB)
         {
             _logger = logger;
-            pedidos = Pedidos;
+            _DB = dB;
         }
 
         public IActionResult Index(string obs, string cliente, string est)
@@ -26,13 +26,13 @@ namespace WebApp.Controllers
             {
                 Pedido MiPedido = new Pedido(obs, i++, cliente, est);
 
-                pedidos.Add(MiPedido);
+                _DB.Cadeteria.Pedidos.Add(MiPedido);
 
-                return View(pedidos);
+                return View(_DB.Cadeteria.Pedidos);
             }
             else
             {
-                return View(pedidos);
+                return View(_DB.Cadeteria.Pedidos);
             }
             
         }
