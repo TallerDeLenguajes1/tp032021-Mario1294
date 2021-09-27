@@ -20,11 +20,24 @@ namespace WebApp.Controllers
             _DB = dB;
         }
 
-        public IActionResult Index(string obs, string cliente, string est)
+        public IActionResult Index(string obs, string est, string name, string phone, string address)
         {
+            
             if (obs != null)
             {
-                Pedido MiPedido = new Pedido(obs, i++, cliente, est);
+                Pedido MiPedido = new Pedido
+                {
+                    Num = i++,
+                    Obs = obs,
+                    Cliente = new Cliente
+                    {
+                        Nombre = name,
+                        Direccion =address,
+                        Telf = phone,
+                    },
+                    Estado = est,
+
+                };
 
                 _DB.Cadeteria.Pedidos.Add(MiPedido);
 

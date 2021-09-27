@@ -9,20 +9,18 @@ namespace WebApp.Entidades
     {
         private int num;
         private string obs;
-        private string cliente;
+        private Cliente cliente;
         private string estado;
 
         public int Num { get => num; set => num = value; }
         public string Obs { get => obs; set => obs = value; }
-        public string Cliente { get => cliente; set => cliente = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
         public string Estado { get => estado; set => estado = value; }
+        
 
-        public Pedido(string _obs, int _num, string _cliente, string _estado)
+        public Pedido()
         {
-            this.num = _num;
-            this.obs = _obs;
-            this.cliente = _cliente;
-            this.estado = _estado;
+
         }
     }
 }

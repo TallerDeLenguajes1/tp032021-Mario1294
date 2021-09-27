@@ -2,31 +2,40 @@
 @{
     ViewData["Title"] = "Crear Pedido";
 }
-<div class="text-center">
-    <h1 class="display-4">Crear Pedido</h1>
+<div>
+    <h3 >Datos del Pedido</h3>
 </div>
 
 <form asp-action="Index" asp-controller="Pedidos" method="post">
 
     <fieldset>
-        
+
         <div class="col-md-6">
             <label for="obs" class="form-label">Osbservacion:</label>
-            <input type="text" class="form-control" name="obs" value="" id="obs" required/>
+            <input type="text" class="form-control" name="obs" value="" id="obs" required />
         </div>
- 
+
         <div class="col-md-6">
             <label for="est" class="form-label">Estado: </label>
             <input type="text" class="form-control" id="est" name="est" value="" required />
         </div>
-
+        <br /><h3>Datos del Cliente</h3>
         <div class="col-md-6">
-            <label for="cliente" class="form-label">Cliente: </label>
-            <input type="text" class="form-control" id="cliente" name="Cliente" value="" required/>
+            <label for="name" class="form-label">Nombre: </label>
+            <input type="text" class="form-control" id="name" name="name" value="" required />
+        </div>
+        <div class="col-md-6">
+            <label for="phone" class="form-label">Telefono: </label>
+            <input type="text" class="form-control" id="phone" name="name" value="" required />
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Direccion: </label>
+            <input type="text" class="form-control" id="address" name="address" value="" required />
         </div>
 
+
         <div class="col-md-6">
-            <br /> 
+            <br />
             <input type="submit" class="btn-primary" />
         </div>
 

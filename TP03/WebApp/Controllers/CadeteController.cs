@@ -29,6 +29,7 @@ namespace WebApp.Controllers
                 Cadete MiCadete = new Cadete(nombre, i++, telf, direccion);
 
                 _DB.Cadeteria.Cadetes.Add(MiCadete);
+                _DB.GuardarCadete(_DB.Cadeteria.Cadetes);
                 return View(_DB.Cadeteria.Cadetes);
             }
             else
