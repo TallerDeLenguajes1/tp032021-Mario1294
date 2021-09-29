@@ -2,7 +2,7 @@
     ViewData["Title"] = "Pedidos";
 }
 
-@model List<WebApp.Entidades.Pedido>
+@model WebApp.Entidades.Cadeteria
 
 <div class="text-center">
     <h1 class="display-4">Pedidos</h1>
@@ -15,20 +15,34 @@
             <th scope="col">Cliente</th>
             <th scope="col">Observacion</th>
             <th scope="col">Estado</th>
+            <th>Cadete</th>
         </tr>
     </thead>
     <tbody>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.Pedidos)
         {
-            <tr>
-                <td>@item.Num</td>
-                <td>@item.Cliente.Nombre</td>
-                <td>@item.Obs</td>  
-                <td>@item.Estado</td>
-                
-            </tr>
-        }
+            <form asp-action="AsignarCadete">
+                <tr>
+                    <td hidden><input  name="IdPedido" value="@item.Num" /> </td>
+                    <td>@item.Num</td>
+                    <td>@item.Cliente.Nombre</td>
+                    <td>@item.Obs</td>
+                    <td>@item.Estado</td>
+                    <td>
+                        <select name="IdCadete" class="form-control form-control-lg">
+                            @foreach (var cadete in Model.Cadetes)
+                            {
+                                <option value="@cadete.Id">@cadete.Nombre</option>
 
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <button type="submit">Asignar</button>
+                    </td>
+                </tr>
+            </form>
+        }
     </tbody>
 </table>

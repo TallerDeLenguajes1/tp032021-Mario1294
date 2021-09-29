@@ -719,3 +719,4 @@ C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Pe
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\obj\Debug\net5.0\Razor\Views\Pedidos\CrearPedido.cshtml.g.cs
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\bin\Debug\net5.0\Cadete.json
+C:\Taller\Repogit\tp032021-Mario1294\TP03\WebApp\bin\Debug\net5.0\Cadetes.json

@@ -10,7 +10,7 @@ namespace WebApp.Controllers
 {
     public class PedidosController : Controller
     {
-        static int i = 0;
+        
         private readonly ILogger<PedidosController> _logger;
         private readonly DBTemporal _DB;
 
@@ -22,12 +22,12 @@ namespace WebApp.Controllers
 
         public IActionResult Index(string obs, string est, string name, string phone, string address)
         {
-            
+            int id = _DB.Cadeteria.Pedidos.Count;
             if (obs != null)
             {
                 Pedido MiPedido = new Pedido
                 {
-                    Num = i++,
+                    Num = id++,
                     Obs = obs,
                     Cliente = new Cliente
                     {
@@ -41,17 +41,25 @@ namespace WebApp.Controllers
 
                 _DB.Cadeteria.Pedidos.Add(MiPedido);
 
-                return View(_DB.Cadeteria.Pedidos);
+                return View(_DB.Cadeteria);
             }
             else
             {
-                return View(_DB.Cadeteria.Pedidos);
+                return View(_DB.Cadeteria);
             }
             
         }
         public IActionResult CrearPedido()
         {
-            return View();
+            return View(_DB.Cadeteria);
+        }
+
+        public IActionResult AsignarCadete(int IdCadete, int IdPedido)
+        {
+            Cadete cadete = _DB.Cadeteria.Cadetes.Where(a => a.Id == IdCadete).First();
+            Pedido pedido = _DB.Cadeteria.Pedidos.Where(a => a.Num == IdPedido).First();
+            cadete.Pedidos.Add(pedido);
+            return Redirect("Index");
         }
     }
 }

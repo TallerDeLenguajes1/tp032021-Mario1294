@@ -10,8 +10,7 @@ namespace WebApp.Controllers
 {
     public class CadeteController : Controller
     {
-        static int i = 0;
-        
+
         private readonly ILogger<CadeteController> _logger;
         private readonly DBTemporal _DB;
 
@@ -23,10 +22,11 @@ namespace WebApp.Controllers
 
         public IActionResult Index(string nombre, string telf, string direccion)
         {
-            if (nombre != null)
+            int id = _DB.Cadeteria.Cadetes.Count;
+            if (nombre != null )
             {
                 
-                Cadete MiCadete = new Cadete(nombre, i++, telf, direccion);
+                Cadete MiCadete = new Cadete(nombre, id++, telf, direccion);
 
                 _DB.Cadeteria.Cadetes.Add(MiCadete);
                 _DB.GuardarCadete(_DB.Cadeteria.Cadetes);

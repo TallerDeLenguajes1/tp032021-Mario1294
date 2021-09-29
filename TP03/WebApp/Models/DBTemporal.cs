@@ -20,14 +20,13 @@ namespace WebApp.Entidades
             {
                 Cadeteria.Cadetes = GetListCadetes();
             }
-       
         }
 
         public void GuardarCadete(List<Cadete> cadetes)
         {
             try
             {
-                string _path = @"Cadete.json";
+                string _path = @"Cadetes.json";
                 string CadeteJson = JsonSerializer.Serialize(cadetes);
               
                 using(FileStream miArchivo = new FileStream(_path, FileMode.OpenOrCreate))           
@@ -50,7 +49,7 @@ namespace WebApp.Entidades
             List<Cadete> CadetesJson = null;
             try
             {
-                string _path = @"Cadete.json";
+                string _path = @"Cadetes.json";
                 
                 if (File.Exists(_path))
                 {
