@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Modificar Pedido";
+}
+@model WebApp.Entidades.Pedido
+<form asp-action="ModifyPedido"  method="post">
+
+    <fieldset>
+        <div class="col-md-6">
+            <label for="obs" class="form-label">Osbservacion:</label>
+            <input type="text" class="form-control" name="obs" value="@Model.Obs" id="" required />
+        </div>
+
+        <div class="col-md-6">
+            <label for="est" class="form-label">Estado: </label>
+            <input type="text" class="form-control" id="" name="est" value="@Model.Estado" required />
+        </div>
+        <br /><h3>Datos del Cliente</h3>
+        <div class="col-md-6">
+            <label for="name" class="form-label">Nombre: </label>
+            <input type="text" class="form-control" id="" name="name" value="@Model.Cliente.Nombre" required />
+        </div>
+        <div class="col-md-6">
+            <label for="phone" class="form-label">Telefono: </label>
+            <input type="text" class="form-control" id="" name="phone" value="@Model.Cliente.Telf" required />
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Direccion: </label>
+            <input type="text" class="form-control" id="" name="address" value="@Model.Cliente.Direccion" required />
+        </div>
+
+
+        <div class="col-md-6">
+            <br />
+            <button type="submit" class="btn-info btn-success btn-lg">Confirmar</button>
+        </div>
+
+    </fieldset>
+</form>

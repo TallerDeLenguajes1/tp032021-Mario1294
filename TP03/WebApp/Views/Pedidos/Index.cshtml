@@ -2,7 +2,7 @@
     ViewData["Title"] = "Pedidos";
 }
 
-@model WebApp.Entidades.Cadeteria
+@model List<WebApp.Entidades.Pedido>
 
 <div class="text-center">
     <h1 class="display-4">Pedidos</h1>
@@ -15,34 +15,31 @@
             <th scope="col">Cliente</th>
             <th scope="col">Observacion</th>
             <th scope="col">Estado</th>
-            <th>Cadete</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
+
+
+
         </tr>
     </thead>
     <tbody>
 
-        @foreach (var item in Model.Pedidos)
+        @foreach (var item in Model)
         {
-            <form asp-action="AsignarCadete">
-                <tr>
-                    <td hidden><input  name="IdPedido" value="@item.Num" /> </td>
-                    <td>@item.Num</td>
-                    <td>@item.Cliente.Nombre</td>
-                    <td>@item.Obs</td>
-                    <td>@item.Estado</td>
-                    <td>
-                        <select name="IdCadete" class="form-control form-control-lg">
-                            @foreach (var cadete in Model.Cadetes)
-                            {
-                                <option value="@cadete.Id">@cadete.Nombre</option>
+            
+            <tr>
+                <td>@item.Num</td>
+                <td>@item.Cliente.Nombre</td>
+                <td>@item.Obs</td>
+                <td>@item.Estado</td>
+                <td>
+                    <form asp-action="ModifyPedido">
+                        <input hidden type="number" name="id" value="@item.Num"/>
+                        <button type="submit" class="btn-info btn-success btn-lg">Modificar</button>
+                    </form>
+                </td>
 
-                            }
-                        </select>
-                    </td>
-                    <td>
-                        <button type="submit">Asignar</button>
-                    </td>
-                </tr>
-            </form>
+            </tr>
         }
     </tbody>
 </table>

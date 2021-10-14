@@ -17,9 +17,11 @@ namespace WebApp.Entidades
         public string Direccion { get => direccion; set => direccion = value; }
         public string Telf { get => telf; set => telf = value; }
 
-        public Cliente()
+        public Cliente(string _nombre, string _direccion, string _telf)
         {
-
+            this.nombre = _nombre;
+            this.direccion = _direccion;
+            this.telf = _telf;
         }
     }
 }

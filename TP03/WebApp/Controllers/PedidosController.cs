@@ -20,46 +20,45 @@ namespace WebApp.Controllers
             _DB = dB;
         }
 
-        public IActionResult Index(string obs, string est, string name, string phone, string address)
+        public IActionResult Index()
         {
-            int id = _DB.Cadeteria.Pedidos.Count;
-            if (obs != null)
-            {
-                Pedido MiPedido = new Pedido
-                {
-                    Num = id++,
-                    Obs = obs,
-                    Cliente = new Cliente
-                    {
-                        Nombre = name,
-                        Direccion =address,
-                        Telf = phone,
-                    },
-                    Estado = est,
 
-                };
-
-                _DB.Cadeteria.Pedidos.Add(MiPedido);
-
-                return View(_DB.Cadeteria);
-            }
-            else
-            {
-                return View(_DB.Cadeteria);
-            }
+                return View(_DB.Cadeteria.Pedidos);
             
         }
-        public IActionResult CrearPedido()
+        public IActionResult CrearPedido(string obs, string est, string name, string phone, string address)
         {
-            return View(_DB.Cadeteria);
+            int id = _DB.Cadeteria.Pedidos.Count + 1;
+            if (obs == null)
+            {
+                return View();
+            }
+            Pedido MiPedido = new Pedido(id, obs, phone, address, name, est);
+            _DB.Cadeteria.Pedidos.Add(MiPedido);
+            _DB.GuardarPedido(_DB.Cadeteria.Pedidos);
+            
+            return Redirect("Index");
         }
 
-        public IActionResult AsignarCadete(int IdCadete, int IdPedido)
+        public IActionResult ModifyPedido(string obs, string est, string name, string phone, string address, int id)
         {
-            Cadete cadete = _DB.Cadeteria.Cadetes.Where(a => a.Id == IdCadete).First();
-            Pedido pedido = _DB.Cadeteria.Pedidos.Where(a => a.Num == IdPedido).First();
-            cadete.Pedidos.Add(pedido);
-            return Redirect("Index");
+            if (obs == null || est == null || name == null || phone == null || address == null) 
+            {
+                Pedido Ped = _DB.Cadeteria.Pedidos.Find(x => x.Num == id);
+                if (Ped != null)
+                    return View(Ped);
+                else
+                    return View("Index", _DB.Cadeteria.Pedidos);
+            }
+            Pedido NewPed = new Pedido(id, obs, phone, address, name, est);
+            Pedido MPed = _DB.Cadeteria.Pedidos.Find(x => x.Num == id);
+            _DB.Cadeteria.Pedidos.Remove(MPed);
+            _DB.Cadeteria.Pedidos.Add(NewPed);
+            _DB.Cadeteria.Pedidos.Sort((x, y) => x.Num.CompareTo(y.Num));
+            _DB.GuardarPedido(_DB.Cadeteria.Pedidos);
+
+
+            return View("Index", _DB.Cadeteria.Pedidos);
         }
     }
 }
